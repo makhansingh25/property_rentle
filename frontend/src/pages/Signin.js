@@ -45,7 +45,7 @@ const Signin = () => {
         navigate("/");
         toast.success(data.message);
       } else {
-        setError(data.message || "Signin failed");
+        toast.error(data.error || "Signin failed");
       }
     } catch (error) {
       console.error("An error occurred:", error);

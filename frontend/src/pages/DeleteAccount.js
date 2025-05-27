@@ -6,7 +6,7 @@ const DeleteAccount = ({ id }) => {
   const { storeToken } = useAuth();
   const navigate = useNavigate();
   const DeleteHandle = async () => {
-    const response = await fetch(`http://localhost:3000/api/deleteuser/${id}`, {
+    const response = await fetch(`http://localhost:4000/api/deleteuser/${id}`, {
       method: "DELETE",
     });
     const data = await response.json();

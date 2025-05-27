@@ -40,7 +40,7 @@ const BookmarkList = () => {
           "Failed to fetch bookmarks:",
           err.data?.data || err.message
         );
-        }
+      }
     };
 
     fetchBookmarks();

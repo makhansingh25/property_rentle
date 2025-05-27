@@ -37,7 +37,7 @@ const bookmark = async (req, res) => {
 
 const getBookmarks = async (req, res) => {
   try {
-    const userId = req.user.id;     
+    const userId = req.user.id;
 
     const bookmarks = await db("bookmarks")
       .join("rooms", "bookmarks.property_id", "rooms.id")

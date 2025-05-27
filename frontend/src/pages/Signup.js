@@ -41,14 +41,13 @@ const Signup = () => {
       });
 
       const datas = await response.json();
-
+      console.log("tdrtrt", response);
       if (response.ok) {
         storeToken(datas.token);
         toast.success(datas.message);
         navigate("/");
       } else {
-        console.error("Signup failed:", datas.errors);
-        toast.error(datas.error);
+        toast.error(datas.errors.password._errors[0] || "Signup failed.");
       }
     } catch (error) {
       console.error("An error occurred:", error);

@@ -8,7 +8,7 @@ const JWT_SECRET = process.env.JWT_SECRET_KEY;
 
 const signup = async (req, res) => {
   const valiations = userSchema.safeParse(req.body);
-                                                                    
+
   if (!valiations.success) {
     return res.status(400).json({ errors: valiations.error.format() });
   }
@@ -27,7 +27,7 @@ const signup = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log(password);
-    console.log(hashedPassword);  
+    console.log(hashedPassword);
     const [user] = await db("users").insert({
       username,
       email,
