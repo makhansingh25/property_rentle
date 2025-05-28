@@ -8,6 +8,7 @@ import { TbFridge } from "react-icons/tb";
 import { LuHeater } from "react-icons/lu";
 import { useParams } from "react-router-dom";
 import Message from "./Message";
+import QRCodeGenerator from "./Qrcode";
 
 const PropertyDetail = () => {
   const [properties, setProperties] = useState([]);
@@ -167,7 +168,7 @@ const PropertyDetail = () => {
                 </li>
               </ul>
             </div>
-
+            <QRCodeGenerator />
             <Message propertyId={property.id} ReceiverId={property.user_id} />
           </div>
         ))}
